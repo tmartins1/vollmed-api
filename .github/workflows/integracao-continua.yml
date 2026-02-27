@@ -39,6 +39,6 @@ jobs:
         run: mvn -B verify
     
       - name: Analize Estatica
-            env:
-              SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-            run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=tmartins1_vollmed-api
+        env:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=tmartins1_vollmed-api
