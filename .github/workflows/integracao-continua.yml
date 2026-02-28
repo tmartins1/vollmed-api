@@ -44,6 +44,6 @@ jobs:
       - name: Analize Estatica
         env:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -Dsonar.coverage.jacoco.xmlReportPaths=
+        run: mvn clean jacoco:prepare-agent install jacoco:report -Dsonar.coverage.jacoco.xmlReportPaths=
               ../app-it/target/site/jacoco-aggregate/jacoco.xml
                 org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Pcoverage
